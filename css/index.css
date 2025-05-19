@@ -1,0 +1,154 @@
+/* File: /index.css */
+@font-face {
+	font-family: 'HeadlineGothicFont';
+	src: url('../fonts/page-fonts/LeagueGothic-Regular-VariableFont_wdth.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'FancyButtonFont';
+	src: url('../fonts/page-fonts/RockSalt-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'TextRegularFont';
+	src: url('../fonts/page-fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+}
+:root {
+	--primary-bg-color-dark:    #515151;
+	--primary-color-dark:  	    #f6f6f6;
+	--primary-bg-color:         #f6f6f6;
+	--primary-color:            #515151;
+	/* Theme Colors */
+	--orange-lightest:     		#FFE0B2;
+	--orange-light:        		#FFB74D;
+	--orange:              		#FF9800;
+	--orange-dark:     	  		#F57C00;
+	--turquoise-lightest: 		#E0F7FA;
+	--turquoise-light:    		#4DD0E1;
+	--turquoise:          		#00ACC1;
+	--turquoise-dark:     		#00838F;
+	
+	--danger-color:       		#E53935; /* kräftiges Rot */
+	--danger-color-light: 		#FFCDD2; /* helles Rot für Hintergründe */
+	--danger-color-dark:  		#B71C1C; /* sehr dunkles Rot */
+	
+	--warning-color:      		#FFD600; /* kräftiges, reines Gelb */
+	--warning-color-light:		#FFF9C4; /* sehr helles Gelb, fast Pastell */
+	--warning-color-dark:  		#FFAB00; /* dunkleres, goldiges Gelb */
+	
+	--success-color:      		#43A047; /* kräftiges Grün */
+	--success-color-light:		#C8E6C9; /* helles Grün für Hintergründe */
+	--success-color-dark: 		#1B5E20; /* sehr dunkles Grün */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+	font-family: 'TextRegularFont', sans-serif;
+	color: var(--primary-color);
+	background-color: var(--primary-bg-color);
+}
+button {
+	font-family: 'FancyButtonFont', 'Comic Sans MS', cursive, sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'HeadlineGothicFont';
+	font-weight: normal;
+	letter-spacing: 0.3rem;
+}
+
+p {
+	font-size: 1rem;
+}
+.small {
+	font-size: 0.8rem;
+}
+h6 {
+	font-size: 1rem;
+}
+h5 {
+	font-size: 1.25rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h1 {
+	font-size: 2.25rem;
+}
+
+.container {
+	border: 3px solid red;
+	width: 95%;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 576px) {
+	html {
+		font-size: 16px;
+	}
+	.container {
+		width: 90%;
+	}
+}
+@media (min-width: 768px) {
+	html {
+		font-size: 18px;
+	}
+	.container {
+		width: 85%;
+	}
+}
+@media (min-width: 992px) {
+	html {
+		font-size: 19px;
+	}
+}
+@media (min-width: 1200px) {
+	html {
+		font-size: 21px;
+	}
+	.container {
+		width: 80%;
+	}
+}
+@media (min-width: 1400px) {
+	html {
+		font-size: 23px;
+	}
+	.container {
+		width: 70%;
+	}
+}
+@media (min-width: 1920px) {
+	html {
+		font-size: 25px;
+	}
+	.container {
+		width: 60%;
+	}
+}
+/*  Beispielcode für meinen Hero Bereich
+
+.hero {
+  width: 100vw;
+  height: 600px;
+  background-image: url('./images/backgrund_tuerkis.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*/
