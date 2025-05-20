@@ -46,11 +46,13 @@
 	box-sizing: border-box;
 }
 html {
+	width: 100vw;
 	font-size: 16px;
 	font-family: 'TextRegularFont', sans-serif;
 	color: var(--primary-color);
 	background-color: var(--primary-bg-color);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 button {
 	font-family: 'FancyButtonFont', 'Comic Sans MS', cursive, sans-serif;
@@ -255,6 +257,107 @@ body{
 			margin-bottom: 6rem;
 		}
 	}
+	
+	.newsletter-section {
+		margin-top: 4rem;
+		text-align: center;
+		background-color: var(--orange-dark);
+		padding: 8rem 0;
+		.text-container {
+			margin-bottom: 4rem;
+			h3 {
+				font-weight: normal;
+			}
+		}
+		.form-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			gap: 1.5rem;
+			input {
+				width: 22.5rem;
+				height: 3.375rem;
+				max-width: 22.5rem;
+				padding: 1rem 2rem;
+				border-radius: 1rem;
+				border: none;
+				font-size:1.2rem
+			}
+			button{
+				border: none;
+				background: none;
+				cursor: pointer;
+				i {
+					height: 100%;
+					color: var(--primary-color-dark);
+					transform: scale(1);
+					transition: transform 0.2s ease;
+				}
+				&:hover {
+					i {
+						animation: bounce-scale 0.5s infinite alternate;
+						/* Das lässt den Scale zwischen 1.2 und 1.3 hin und her wechseln */
+					}
+				}
+				&:active {
+					i {
+						animation: none;
+						transform: scale(1);
+						color: var(--primary-color);
+					}
+				}
+			}
+		}
+	}
+	.myMainSkills-section {
+		margin-top: 4rem;
+		text-align: center;
+		h3 {
+			font-weight: normal;
+		}
+		.skills-container {
+			margin-top: 4rem;
+			display: grid;
+			justify-content: center;
+			grid-template-columns: repeat(1, 312px);
+			grid-template-rows: repeat(8, 312px);
+			row-gap: 1.5rem;
+			grid-template-areas:
+				"two" "one"
+				"three" "four"
+				"six" "five"
+				"seven" "eight";
+		}
+		.skills-container {
+			.one{ grid-area: one; width: 50%;height: 50%;margin: 0 auto; }
+			.two{ grid-area: two; }
+			.three{ grid-area: three; }
+			.four{ grid-area: four; width: 50%;height: 50%;margin: 0 auto; }
+			.five{ grid-area: five; width: 50%;height: 50%;margin: 0 auto; }
+			.six{ grid-area: six; }
+			.seven{ grid-area: seven; }
+			.eight{ grid-area: eight; width: 50%;height: 50%;margin: 0 auto; }
+			
+			.skill-image,
+			.skill-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+				gap: 1rem;
+				padding: 1rem;
+				
+				h5 {
+					font-weight: normal;
+				}
+			}
+			.skill-image {
+				background-color: var(--orange-dark);
+			}
+		}
+	}
 }
 
 @media (max-width: 555px) {
@@ -280,7 +383,6 @@ body{
 }
 
 .container {
-	border: 3px solid red;
 	width: 95%;
 	padding-right: 1rem;
 	padding-left: 1rem;
@@ -298,7 +400,38 @@ body{
 }
 @media (min-width: 768px) {
 	html {
-		font-size: 18px;
+		font-size: 17px;
+	}
+	body{
+		.newsletter-section{
+			.form-container {
+				input {
+					font-size: 1rem;
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+		.myMainSkills-section {
+			.skills-container {
+				grid-template-columns: repeat(2, 312px);
+				grid-template-rows: repeat(4, 312px);
+				row-gap: 6rem;
+				grid-template-areas:
+				"one two"
+				"three four"
+				"five six"
+				"seven eight";
+			}
+			.one{ width: 100% !important; height: 100% !important; margin: 0 0; }
+			.four{ width: 100% !important; height: 100% !important; margin: 0 0; }
+			.five{ width: 100% !important; height: 100% !important; margin: 0 0; }
+			.eight{ width: 100% !important; height: 100% !important; margin: 0 0; }
+			
+			.two{ border-right: .125rem solid var(--orange-dark); }
+			.three{ border-left: .125rem solid var(--orange-dark); }
+			.six{ border-right: .125rem solid var(--orange-dark); }
+			.seven{ border-left: .125rem solid var(--orange-dark); }
+		}
 	}
 	.container {
 		width: 85%;
@@ -306,12 +439,12 @@ body{
 }
 @media (min-width: 992px) {
 	html {
-		font-size: 19px;
+		font-size: 18px;
 	}
 }
 @media (min-width: 1200px) {
 	html {
-		font-size: 21px;
+		font-size: 20px;
 	}
 	.container {
 		width: 80%;
@@ -319,7 +452,7 @@ body{
 }
 @media (min-width: 1400px) {
 	html {
-		font-size: 23px;
+		font-size: 22px;
 	}
 	.container {
 		width: 70%;
@@ -327,24 +460,19 @@ body{
 }
 @media (min-width: 1920px) {
 	html {
-		font-size: 25px;
+		font-size: 23px;
 	}
 	.container {
 		width: 60%;
 	}
 }
-/*  Beispielcode für meinen Hero Bereich
 
-.hero {
-  width: 100vw;
-  height: 600px;
-  background-image: url('./images/backgrund_tuerkis.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+@keyframes bounce-scale {
+	from {
+		transform: scale(1.2);
+	}
+	to {
+		transform: scale(1.3);
+	}
 }
-
-*/
