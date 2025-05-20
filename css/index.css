@@ -182,14 +182,22 @@ body{
 	
 	.hero-section {
 		height: 40rem;
-		background-image: url('../images/bg_wellen_orange.svg');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: bottom center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		overflow: hidden;
+		
+		.background {
+			height: 100%;
+			width: 100%;
+			background-image: url('../images/bg_wellen_orange.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: bottom center;
+		}
+		
 		.content-container {
+		position: absolute;
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
